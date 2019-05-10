@@ -39,7 +39,6 @@ int recv_int(int cli_sockfd)
 /*
  * Socket Write Functions
  */
-
 /* Writes a message to a client socket. */
 void write_client_msg(int cli_sockfd, char * msg)
 {
@@ -366,7 +365,7 @@ void *run_game(void *thread_data)
                 write_client_msg(cli_sockfd[(player_turn + 1) % 2], "LSE");
                 printf("Player %d won.\n", player_turn);
             }
-            else if (turn_count == 8) { /* There have been nine valid moves and no winner, game is a draw. */
+            else if (turn_count == 8) { /* There have been nine valid moves and no winner, game is a draw. this is for the check */
                 printf("Draw.\n");
                 write_clients_msg(cli_sockfd, "DRW");
                 game_over = 1;
@@ -397,9 +396,7 @@ void *run_game(void *thread_data)
     pthread_exit(NULL);
 }
 
-/* 
- * Main Program
- */
+
 
 int main(int argc, char *argv[])
 {   
