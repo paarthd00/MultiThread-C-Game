@@ -1,5 +1,5 @@
-Tic-Tac-Toe
-=============
+Multi thread game in C
+======================
 
 If you want to see debug messages add,
 
